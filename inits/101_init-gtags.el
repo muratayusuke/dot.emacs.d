@@ -44,4 +44,7 @@
 
 ;; change synbol regexp for finding emacs function
 (setq gtags-symbol-regexp "[A-Za-z_][A-Za-z_0-9---\?]*")
-
+(setq gtags-mode-hook
+      '(lambda ()
+         (setq gtags-select-buffer-single t)
+         ))
