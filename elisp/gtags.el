@@ -23,7 +23,7 @@
 
 ;; GLOBAL home page is at: http://www.gnu.org/software/global/
 ;; Author: Tama Communications Corporation
-;; Version: 3.2
+;; Version: 3.0
 ;; Keywords: tools
 ;; Required version: GLOBAL 5.9.7 or later
 
@@ -47,12 +47,12 @@
 ;; There are two hooks, gtags-mode-hook and gtags-select-mode-hook.
 ;; The usage of the hook is shown as follows.
 ;;
-;; [Setting to use vi style scroll key]
+;; [Setting to reproduce old 'Gtags mode']
 ;;
 ;; (add-hook 'gtags-mode-hook
 ;;   '(lambda ()
-;;      (define-key gtags-mode-map "\C-f" 'scroll-up)
-;;      (define-key gtags-mode-map "\C-b" 'scroll-down)
+;;      (setq gtags-pop-delete t)
+;;      (setq gtags-path-style 'absolute)
 ;; ))
 ;;
 ;; [Setting to make 'Gtags select mode' easy to see]
@@ -62,11 +62,6 @@
 ;;      (setq hl-line-face 'underline)
 ;;      (hl-line-mode 1)
 ;; ))
-;;
-;; (Policy of key mapping)
-;; If 'gtags-suggested-key-mapping' is not set, any key mapping is not done.
-;; If 'gtags-disable-pushy-mouse-mapping' is set, any mouse mapping is not done.
-;;
 
 ;;; Code
 
@@ -104,6 +99,7 @@
   :group 'gtags
   :type 'boolean)
 
+; This has not been used any longer.
 (defcustom gtags-disable-pushy-mouse-mapping nil
   "*If non-nil, mouse key mapping is disabled."
   :group 'gtags
@@ -111,16 +107,6 @@
 
 (defcustom gtags-suggested-key-mapping nil
   "*If non-nil, suggested key mapping is enabled."
-  :group 'gtags
-  :type 'boolean)
-
-(defcustom gtags-use-old-key-map nil
-  "*If non-nil, old key mapping is enabled."
-  :group 'gtags
-  :type 'boolean)
-
-(defcustom gtags-grep-all-text-files nil
-  "*If non-nil, gtags-find-with-grep command searchs all text files."
   :group 'gtags
   :type 'boolean)
 
@@ -139,90 +125,56 @@
   "Regexp matching tag definition name.")
 (defvar gtags-mode-map (make-sparse-keymap)
   "Keymap used in gtags mode.")
-(defvar gtags-select-mode-map (make-sparse-keymap)
-  "Keymap used in gtags select mode.")
 (defvar gtags-running-xemacs (string-match "XEmacs\\|Lucid" emacs-version)
   "Whether we are running XEmacs/Lucid Emacs")
 (defvar gtags-rootdir nil
   "Root directory of source tree.")
-(defvar gtags-global-command nil
-  "Command name of global.")
+;
+; New key assignment to avoid conflicting with ordinary assignments.
+;
+(define-key gtags-mode-map "\e*" 'gtags-pop-stack)
+(define-key gtags-mode-map "\e." 'gtags-find-tag)
+(define-key gtags-mode-map "\C-x4." 'gtags-find-tag-other-window)
+;
+; You can make key mappings using 'gtags-mode-hook in your $HOME/.emacs:
+; The following two brings the same result.
+;
+; (add-hook 'gtags-mode-hook
+;   '(lambda ()
+;         (setq gtags-suggested-key-mapping t)
+; ))
+; (add-hook 'gtags-mode-hook
+;   '(lambda ()
+;         (define-key gtags-mode-map "\eh" 'gtags-display-browser)
+;         (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
+;         (define-key gtags-mode-map "\C-t" 'gtags-pop-stack)
+;         (define-key gtags-mode-map "\eP" 'gtags-find-file)
+;         (define-key gtags-mode-map "\ef" 'gtags-parse-file)
+;         (define-key gtags-mode-map "\eg" 'gtags-find-with-grep)
+;         (define-key gtags-mode-map "\eI" 'gtags-find-with-idutils)
+;         (define-key gtags-mode-map "\es" 'gtags-find-symbol)
+;         (define-key gtags-mode-map "\er" 'gtags-find-rtag)
+;         (define-key gtags-mode-map "\et" 'gtags-find-tag)
+;         (define-key gtags-mode-map "\ev" 'gtags-visit-rootdir)
+; ))
 
-;; Set global's command name
-(setq gtags-global-command (getenv "GTAGSGLOBAL"))
-(if (or (not gtags-global-command) (equal gtags-global-command ""))
-    (setq gtags-global-command "global"))
-
-;; Key mapping of gtags-mode.
-(if gtags-suggested-key-mapping
-    (progn
-      ; Current key mapping.
-      (define-key gtags-mode-map "\C-ch" 'gtags-display-browser)
-      (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
-      (define-key gtags-mode-map "\C-t" 'gtags-pop-stack)
-      (define-key gtags-mode-map "\C-cP" 'gtags-find-file)
-      (define-key gtags-mode-map "\C-cf" 'gtags-parse-file)
-      (define-key gtags-mode-map "\C-cg" 'gtags-find-with-grep)
-      (define-key gtags-mode-map "\C-cI" 'gtags-find-with-idutils)
-      (define-key gtags-mode-map "\C-cs" 'gtags-find-symbol)
-      (define-key gtags-mode-map "\C-cr" 'gtags-find-rtag)
-      (define-key gtags-mode-map "\C-ct" 'gtags-find-tag)
-      (define-key gtags-mode-map "\C-cv" 'gtags-visit-rootdir)
-      ; common
-      (define-key gtags-mode-map "\e*" 'gtags-pop-stack)
-      (define-key gtags-mode-map "\e." 'gtags-find-tag)
-      (define-key gtags-mode-map "\C-x4." 'gtags-find-tag-other-window)
-      (if gtags-disable-pushy-mouse-mapping nil
-        (define-key gtags-mode-map [mouse-3] 'gtags-pop-stack)
-        (define-key gtags-mode-map [mouse-2] 'gtags-find-tag-by-event)))
-)
-;; Key mapping of old gtags-mode (obsoleted)
-(if (and gtags-suggested-key-mapping gtags-use-old-key-map)
-    (progn
-      ; Old key mapping
-      (define-key gtags-mode-map "\eh" 'gtags-display-browser)
-      (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
-      (define-key gtags-mode-map "\C-t" 'gtags-pop-stack)
-      (define-key gtags-mode-map "\eP" 'gtags-find-file)
-      (define-key gtags-mode-map "\ef" 'gtags-parse-file)
-      (define-key gtags-mode-map "\eg" 'gtags-find-with-grep)
-      (define-key gtags-mode-map "\eI" 'gtags-find-with-idutils)
-      (define-key gtags-mode-map "\es" 'gtags-find-symbol)
-      (define-key gtags-mode-map "\er" 'gtags-find-rtag)
-      (define-key gtags-mode-map "\et" 'gtags-find-tag)
-      (define-key gtags-mode-map "\ev" 'gtags-visit-rootdir)
-      ; common
-      (define-key gtags-mode-map "\e*" 'gtags-pop-stack)
-      (define-key gtags-mode-map "\e." 'gtags-find-tag)
-      (define-key gtags-mode-map "\C-x4." 'gtags-find-tag-other-window)
-      (if gtags-disable-pushy-mouse-mapping nil
-        (define-key gtags-mode-map [mouse-3] 'gtags-pop-stack)
-        (define-key gtags-mode-map [mouse-2] 'gtags-find-tag-by-event)))
-)
-
-;; Key mapping of gtags-select-mode.
-(if gtags-suggested-key-mapping
-    (progn
-      (define-key gtags-select-mode-map "\e*" 'gtags-pop-stack)
-      (define-key gtags-select-mode-map "\^?" 'scroll-down)
-      (define-key gtags-select-mode-map " " 'scroll-up)
-      (define-key gtags-select-mode-map "\C-b" 'scroll-down)
-      (define-key gtags-select-mode-map "\C-f" 'scroll-up)
-      (define-key gtags-select-mode-map "k" 'previous-line)
-      (define-key gtags-select-mode-map "j" 'next-line)
-      (define-key gtags-select-mode-map "p" 'previous-line)
-      (define-key gtags-select-mode-map "n" 'next-line)
-      (define-key gtags-select-mode-map "q" 'gtags-pop-stack)
-      (define-key gtags-select-mode-map "u" 'gtags-pop-stack)
-      (define-key gtags-select-mode-map "\C-t" 'gtags-pop-stack)
-      (define-key gtags-select-mode-map "\C-m" 'gtags-select-tag)
-      (define-key gtags-select-mode-map "\C-o" 'gtags-select-tag-other-window)
-      (define-key gtags-select-mode-map "\e." 'gtags-select-tag)
-      (if gtags-disable-pushy-mouse-mapping nil
-        (define-key gtags-select-mode-map [mouse-3] 'gtags-pop-stack)
-        (define-key gtags-select-mode-map [mouse-2] 'gtags-select-tag-by-event)))
-)
-;; This is only one exception of the policy.
+(defvar gtags-select-mode-map (make-sparse-keymap)
+  "Keymap used in gtags select mode.")
+(define-key gtags-select-mode-map "\e*" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "\^?" 'scroll-down)
+(define-key gtags-select-mode-map " " 'scroll-up)
+(define-key gtags-select-mode-map "\C-b" 'scroll-down)
+(define-key gtags-select-mode-map "\C-f" 'scroll-up)
+(define-key gtags-select-mode-map "k" 'previous-line)
+(define-key gtags-select-mode-map "j" 'next-line)
+(define-key gtags-select-mode-map "p" 'previous-line)
+(define-key gtags-select-mode-map "n" 'next-line)
+(define-key gtags-select-mode-map "q" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "u" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "\C-t" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "\C-m" 'gtags-select-tag)
+(define-key gtags-select-mode-map "\C-o" 'gtags-select-tag-other-window)
+(define-key gtags-select-mode-map "\e." 'gtags-select-tag)
 
 ;;
 ;; utility
@@ -294,11 +246,9 @@
                       (t                  "-c")))
         (complete-list (make-vector 63 0))
         (prev-buffer (current-buffer)))
-    (if case-fold-search
-        (setq option (concat option "i")))
     ; build completion list
     (set-buffer (generate-new-buffer "*Completions*"))
-    (call-process gtags-global-command nil t nil option string)
+    (call-process "global" nil t nil option string)
     (goto-char (point-min))
     ;
     ; The specification of the completion for files is different from that for symbols.
@@ -326,7 +276,7 @@
     (save-excursion
       (setq buffer (generate-new-buffer (generate-new-buffer-name "*rootdir*")))
       (set-buffer buffer)
-      (setq n (call-process gtags-global-command nil t nil "-pr"))
+      (setq n (call-process "global" nil t nil "-pr"))
       (if (= n 0)
         (setq path (file-name-as-directory (buffer-substring (point-min)(1- (point-max))))))
       (kill-buffer buffer))
@@ -427,7 +377,7 @@
     (setq input (read-from-minibuffer prompt nil nil nil gtags-history-list))
     (if (not (equal "" input)) (setq tagname input))
     (gtags-push-context)
-    (gtags-goto-tag tagname (if gtags-grep-all-text-files "go" "g"))))
+    (gtags-goto-tag tagname "g")))
 
 (defun gtags-find-with-idutils ()
   "Input pattern, search with idutils(1) and move to the locations."
@@ -481,11 +431,7 @@
 (defun gtags-display-browser ()
   "Display current screen on hypertext browser."
   (interactive)
-  (if (= (gtags-current-lineno) 0)
-      (message "This is a null file.")
-      (if (not buffer-file-name)
-          (message "This buffer doesn't have the file name.")
-          (call-process "gozilla"  nil nil nil (concat "+" (number-to-string (gtags-current-lineno))) buffer-file-name))))
+  (call-process "gozilla"  nil nil nil (concat "+" (number-to-string (gtags-current-lineno))) buffer-file-name))
 
 ; Private event-point
 ; (If there is no event-point then we use this version.
@@ -567,8 +513,6 @@
     (setq flag-char (string-to-char flag))
     ; Use always ctags-x format.
     (setq option "-x")
-    (if case-fold-search
-        (setq option (concat option "i")))
     (if (char-equal flag-char ?C)
         (setq context (concat "--from-here=" (number-to-string (gtags-current-lineno)) ":" buffer-file-name))
         (setq option (concat option flag)))
@@ -634,8 +578,8 @@
         (if rootdir (cd rootdir)))))
     (message "Searching %s ..." tagname)
     (if (not (= 0 (if (equal flag "C")
-                      (call-process gtags-global-command nil t nil option "--encode-path=\" \t\"" context tagname)
-                      (call-process gtags-global-command nil t nil option "--encode-path=\" \t\"" tagname))))
+                      (call-process "global" nil t nil option "--encode-path=\" \t\"" context tagname)
+                      (call-process "global" nil t nil option "--encode-path=\" \t\"" tagname))))
 	(progn (message (buffer-substring (point-min)(1- (point-max))))
                (gtags-pop-context))
       (goto-char (point-min))
@@ -745,6 +689,29 @@ with no args, if that value is non-nil."
       (if (null forces) (not gtags-mode)
         (> (prefix-numeric-value forces) 0)))
   (run-hooks 'gtags-mode-hook)
+  ; Suggested key mapping
+  (if gtags-suggested-key-mapping
+      (progn
+        ; Key mapping.
+        (define-key gtags-mode-map "\eh" 'gtags-display-browser)
+        (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
+        (define-key gtags-mode-map "\C-t" 'gtags-pop-stack)
+        (define-key gtags-mode-map "\eP" 'gtags-find-file)
+        (define-key gtags-mode-map "\ef" 'gtags-parse-file)
+        (define-key gtags-mode-map "\eg" 'gtags-find-with-grep)
+        (define-key gtags-mode-map "\eI" 'gtags-find-with-idutils)
+        (define-key gtags-mode-map "\es" 'gtags-find-symbol)
+        (define-key gtags-mode-map "\er" 'gtags-find-rtag)
+        (define-key gtags-mode-map "\et" 'gtags-find-tag)
+        (define-key gtags-mode-map "\ev" 'gtags-visit-rootdir)
+        ; Mouse key mapping
+        (if (not gtags-running-xemacs) nil
+            (define-key gtags-mode-map 'button3 'gtags-pop-stack)
+            (define-key gtags-mode-map 'button2 'gtags-find-tag-by-event))
+        (if gtags-running-xemacs nil
+            (define-key gtags-mode-map [mouse-3] 'gtags-pop-stack)
+            (define-key gtags-mode-map [mouse-2] 'gtags-find-tag-by-event)))
+  )
 )
 
 ;; make gtags select-mode
@@ -771,6 +738,16 @@ Turning on Gtags-Select mode calls the value of the variable
   (goto-char (point-min))
   (message "[GTAGS SELECT MODE] %d lines" (count-lines (point-min) (point-max)))
   (run-hooks 'gtags-select-mode-hook)
+  ; Mouse key mapping
+  (if gtags-suggested-key-mapping
+      (progn
+        (if (not gtags-running-xemacs) nil
+            (define-key gtags-select-mode-map 'button3 'gtags-pop-stack)
+            (define-key gtags-select-mode-map 'button2 'gtags-select-tag-by-event))
+        (if gtags-running-xemacs nil
+            (define-key gtags-select-mode-map [mouse-3] 'gtags-pop-stack)
+            (define-key gtags-select-mode-map [mouse-2] 'gtags-select-tag-by-event)))
+  )
 )
 
 (provide 'gtags)
