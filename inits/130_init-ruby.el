@@ -65,9 +65,9 @@
 ; ;; 何もしない
 ; (setq ruby-block-highlight-toggle 'noghing)
 ;; ミニバッファに表示
-(setq ruby-block-highlight-toggle 'minibuffer)
+;;(setq ruby-block-highlight-toggle 'minibuffer)
 ;; オーバレイする
-; (setq ruby-block-highlight-toggle 'overlay)
+(setq ruby-block-highlight-toggle 'overlay)
 ;; ミニバッファに表示し, かつ, オーバレイする.
 ; (setq ruby-block-highlight-toggle t)
 
