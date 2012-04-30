@@ -25,64 +25,36 @@
                 )
               interpreter-mode-alist))
 
-;; よくあるコードを、自動挿入する。
-(require 'ruby-electric)
-
-;; rinari
-;; https://github.com/eschulte/rinari
-(add-to-list 'load-path "~/.emacs.d/elisp/rinari/")
-(require 'rinari)
-
-;; rhtml-mode
-;; https://github.com/eschulte/rhtml
-(add-to-list 'load-path "~/.emacs.d/elisp/rhtml/")
-(require 'rhtml-mode)
-(add-hook 'rhtml-mode-hook
-    (lambda ()
-      (rinari-launch)
-      (gtags-mode 1)))
-(setq auto-mode-alist
-      (append '(
-                ("\\.rxml$" . rhtml-mode)
-                ("\\.erb$". rhtml-mode)
-                ("\\.rhtml$". rhtml-mode)
-                ) auto-mode-alist))
-
-;; rail snippet
-(yas/load-directory "~/.emacs.d/elisp/yasnippets-rails/rails-snippets")
-
-;; rspec snippet
-(yas/load-directory "~/.emacs.d/elisp/yasnippets-rspec/rspec-snippets")
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ruby-block
+;; cucumber.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/elisp/ruby-block/")
+(add-to-list 'load-path "~/.emacs.d/elisp/cucumber.el/")
 
-(require 'ruby-block)
-(ruby-block-mode t)
+;; ;(setq feature-default-language "fi")
+;; ;; point to cucumber languages.yml or gherkin i18n.yml to use
+;; ;; exactly the same localization your cucumber uses
+;; ;(setq feature-default-i18n-file "/path/to/gherkin/gem/i18n.yml")
+;; ;; and load feature-mode
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
-; ;; 何もしない
-; (setq ruby-block-highlight-toggle 'noghing)
-;; ミニバッファに表示
-;;(setq ruby-block-highlight-toggle 'minibuffer)
-;; オーバレイする
-(setq ruby-block-highlight-toggle 'overlay)
-;; ミニバッファに表示し, かつ, オーバレイする.
-; (setq ruby-block-highlight-toggle t)
+; bind return to newline-and-indent
+(defun my-feature-mode-hook()
+  (define-key feature-mode-map "\C-m" 'newline-and-indent)
+  (rinari-launch)
+  (gtags-mode 1))
+
+(add-hook 'feature-mode-hook 'my-feature-mode-hook)
+
+;; set rspec-mode like key map
+(define-key feature-mode-map  (kbd "C-c ,a") 'feature-verify-all-scenarios-in-project)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ruby-mode用フック処理追加
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun my-ruby-mode-hook()
   (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
-  ; (pabbrev-mode t)
-  (ruby-electric-mode t)
-  (ruby-block-mode t)
-  (setq ruby-block-highlight-toggle t)
-  (local-set-key [f1] 'ri)
-  (local-set-key "\M-\C-i" 'ri-ruby-complete-symbol)
-  (local-set-key [f4] 'ri-ruby-show-args)
   (gtags-mode 1)
   (setq ac-sources (append ac-sources
                            '(ac-source-words-in-same-mode-buffers
