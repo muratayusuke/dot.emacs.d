@@ -14,8 +14,8 @@
 (init-loader-load)
 
 ;; 行番号表示
-(require 'wb-line-number)
-(wb-line-number-toggle)
+;(require 'wb-line-number)
+;(wb-line-number-toggle)
 
 ;; 選択部分をハイライト
 (transient-mark-mode t)
@@ -27,6 +27,5 @@
                       64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
 
 ;; 自動でフォーカスのあるウィンドウの幅を広げる
-;; ←行番号が消えるので一旦使わない
-;(require 'widen-window)
-;(global-widen-window-mode t)
+(require 'widen-window)
+(global-widen-window-mode t)
