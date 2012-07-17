@@ -29,3 +29,4 @@
 ;; 自動でフォーカスのあるウィンドウの幅を広げる
 (require 'widen-window)
 (global-widen-window-mode t)
+
