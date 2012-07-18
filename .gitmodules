@@ -1,0 +1,3 @@
+[submodule "elisp/egg"]
+	path = elisp/egg
+	url = https://github.com/muratayusuke/egg
