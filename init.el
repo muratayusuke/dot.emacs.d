@@ -1,6 +1,8 @@
 ;; 使い方：~/.emacs内にこのファイルを読み込むよう記載する
 ;; (load "~/.emacs.d/init.el")
 
+;; デバッグ
+(setq debug-on-error t)
 
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/elisp")
