@@ -41,7 +41,7 @@
 ; bind return to newline-and-indent
 (defun my-feature-mode-hook()
   (define-key feature-mode-map "\C-m" 'newline-and-indent)
-  (rinari-launch)
+;  (rinari-launch)
   (gtags-mode 1))
 
 (add-hook 'feature-mode-hook 'my-feature-mode-hook)
