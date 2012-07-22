@@ -35,6 +35,7 @@
 ;; ;; exactly the same localization your cucumber uses
 ;; ;(setq feature-default-i18n-file "/path/to/gherkin/gem/i18n.yml")
 ;; ;; and load feature-mode
+(setq feature-use-rvm t)
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
