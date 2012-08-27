@@ -36,3 +36,6 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+;; 自動で最大化
+(set-frame-parameter nil 'fullscreen 'maximized)
