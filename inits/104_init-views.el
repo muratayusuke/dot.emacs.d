@@ -40,7 +40,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (cond (window-system
        (set-face-attribute 'default nil
-                           :family "さざなみゴシック"
+                           :family "Takao Pゴシック"
                            :height 80)
        (set-fontset-font (frame-parameter nil 'font)
                          'japanese-jisx0208
@@ -50,6 +50,10 @@
                          'katakana-jisx0201
                          '("Takaoゴシック" . "unicode-bmp")
                          )
+	   (set-fontset-font (frame-parameter nil 'font)
+						 'mule-unicode-0100-24ff
+						 '("monaco" . "iso10646-1")
+						 )
        (setq face-font-rescale-alist
              '(
                (".*さざなみゴシック.*" . 1.0)
