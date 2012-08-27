@@ -32,3 +32,7 @@
 (require 'widen-window)
 (global-widen-window-mode t)
 
+;; emacs-client
+(require 'server)
+(unless (server-running-p)
+  (server-start))
