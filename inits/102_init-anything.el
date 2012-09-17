@@ -62,7 +62,7 @@
 (setq anything-find-file-additional-sources
       (list anything-c-source-locate))
 
-(define-key global-map (kbd "C-;") 'anything)
+;; (define-key global-map (kbd "C-;") 'anything)
 
 ;; add anything-gtags
 (require 'anything-gtags)
