@@ -4,3 +4,6 @@
 [submodule "elisp/cucumber.el"]
 	path = elisp/cucumber.el
 	url = https://github.com/muratayusuke/cucumber.el
+[submodule "elisp/js2"]
+	path = elisp/js2
+	url = git@github.com:muratayusuke/js2-mode.git
