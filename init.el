@@ -42,4 +42,4 @@
 (set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; auto revert when other process change files
-(auto-revert-mode)
+(global-auto-revert-mode 1)
