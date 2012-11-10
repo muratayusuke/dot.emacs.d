@@ -40,3 +40,6 @@
 
 ;; 自動で最大化
 (set-frame-parameter nil 'fullscreen 'maximized)
+
+;; auto revert when other process change files
+(global-auto-revert-mode 1)
