@@ -77,3 +77,7 @@
         ('berkeley-unix "locate -i %s")
         ('windows-nt "es -i -r %s")
         (t "locate %s")))
+
+;; uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
