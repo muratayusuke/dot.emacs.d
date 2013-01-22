@@ -48,3 +48,14 @@
       '(lambda ()
          (setq gtags-select-buffer-single t)
          ))
+
+;; auto update gtags when file saved
+(defun my-update-gtags ()
+  (let* ((file (buffer-file-name (current-buffer)))
+     (dir (directory-file-name (file-name-directory file))))
+    (when (executable-find "global")
+      (start-process "gtags-update" nil
+             "global" "-uv"))))
+
+(add-hook 'after-save-hook
+      'my-update-gtags)
