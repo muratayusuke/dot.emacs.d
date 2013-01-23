@@ -33,3 +33,7 @@
 
 ;; find-functionをキー割り当てする
 (find-function-setup-keys)
+
+;; 正規表現のグルーピング部分に色付け
+(set-face-foreground 'font-lock-regexp-grouping-backslash "green3")
+(set-face-foreground 'font-lock-regexp-grouping-backslash "green")
