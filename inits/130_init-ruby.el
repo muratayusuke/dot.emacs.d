@@ -60,5 +60,6 @@
   (setq ac-sources (append ac-sources
                            '(ac-source-words-in-same-mode-buffers
                              ac-source-gtags
-                             ac-source-yasnippet))))
+                             ac-source-yasnippet)))
+  (local-set-key (kbd "TAB") 'indent-region))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
