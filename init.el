@@ -43,3 +43,19 @@
 
 ;; auto revert when other process change files
 (global-auto-revert-mode 1)
+
+;; paren match
+(defun paren-match (arg)
+  "Go to the matching parenthesis."
+  (interactive "p")
+  (cond ((looking-at "[[({]")
+         (forward-sexp 1)
+         (backward-char)
+         )
+        ((looking-at "[])}]")
+         (forward-char)
+         (backward-sexp 1)
+         )
+        (t (self-insert-command arg))
+        ))
+(global-set-key "\C-]" 'paren-match)
