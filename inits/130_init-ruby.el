@@ -54,6 +54,29 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ruby-mode用フック処理追加
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun ruby-paren-match (arg)
+  "RUBY ."
+  (interactive "p")
+  (let ((cw (thing-at-point 'word)))
+    (cond ((looking-at "[[({]")
+	   (forward-sexp 1)
+	   (backward-char)
+	   )
+	  ((looking-at "[])}]")
+	   (forward-char)
+	   (backward-sexp 1)
+	   )
+	  ((string-match "^\\(end\\|rescue\\|when\\)$" cw)
+	   (ruby-beginning-of-block)
+	   )
+	  ((string-match "^\\(if\\|class\\|module\\|def\\|begin\\|do\\|case\\)$" cw)
+	   (ruby-end-of-block)
+	   )
+	  (t (self-insert-command arg))
+	  )
+    )
+)
+
 (defun my-ruby-mode-hook()
   (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
   (gtags-mode 1)
@@ -61,5 +84,6 @@
                            '(ac-source-words-in-same-mode-buffers
                              ac-source-gtags
                              ac-source-yasnippet)))
-  (local-set-key (kbd "TAB") 'indent-region))
+  (local-set-key (kbd "TAB") 'indent-region)
+  (local-set-key "\C-]" 'ruby-paren-match))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
