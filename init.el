@@ -59,3 +59,6 @@
         (t (self-insert-command arg))
         ))
 (global-set-key "\C-]" 'paren-match)
+
+;; uniquify
+(require 'uniquify)
