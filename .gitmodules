@@ -10,3 +10,6 @@
 [submodule "elisp/php-mode"]
 	path = elisp/php-mode
 	url = git@github.com:muratayusuke/php-mode.git
+[submodule "elisp/popwin-el"]
+	path = elisp/popwin-el
+	url = git@github.com:muratayusuke/popwin-el.git
