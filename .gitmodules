@@ -16,3 +16,6 @@
 [submodule "elisp/golden-ratio.el"]
 	path = elisp/golden-ratio.el
 	url = git@github.com:muratayusuke/golden-ratio.el.git
+[submodule "elisp/flex-autopair"]
+	path = elisp/flex-autopair
+	url = git@github.com:muratayusuke/flex-autopair.git
