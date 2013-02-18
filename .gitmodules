@@ -13,3 +13,6 @@
 [submodule "elisp/popwin-el"]
 	path = elisp/popwin-el
 	url = git@github.com:muratayusuke/popwin-el.git
+[submodule "elisp/golden-ratio.el"]
+	path = elisp/golden-ratio.el
+	url = git@github.com:muratayusuke/golden-ratio.el.git

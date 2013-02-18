@@ -29,8 +29,9 @@
                       64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
 
 ;; 自動でフォーカスのあるウィンドウの幅を広げる
-(require 'widen-window)
-(global-widen-window-mode t)
+(add-to-list 'load-path "~/.emacs.d/elisp/golden-ratio.el")
+(require 'golden-ratio)
+(golden-ratio-enable)
 
 ;; emacs-client
 (require 'server)
