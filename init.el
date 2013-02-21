@@ -71,3 +71,10 @@
 
 ;; turn off toolbar
 (tool-bar-mode -1)
+
+;; join line
+(global-set-key (kbd "C-S-j")
+				(lambda ()
+				  (interactive)
+				  (when (search-forward "\n" nil t 1)
+					(replace-match " "))))
