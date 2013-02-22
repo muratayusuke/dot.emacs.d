@@ -90,3 +90,8 @@
      (progn (text-scale-mode 0)(buffer-face-mode 0))))
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 (define-key global-map (kbd "C-+") 'text-scale-increase)
+
+;; dmacro
+(defconst *dmacro-key* "\C-t" "繰返し指定キー")
+(global-set-key *dmacro-key* 'dmacro-exec)
+(autoload 'dmacro-exec "dmacro" nil t)
