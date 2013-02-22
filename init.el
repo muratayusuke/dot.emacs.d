@@ -78,3 +78,15 @@
 				  (interactive)
 				  (when (search-forward "\n" nil t 1)
 					(replace-match " "))))
+
+;; text-scale
+(global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+(global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+(global-set-key (kbd "<C-mouse-6>") 'text-scale-increase)
+(global-set-key (kbd "<C-mouse-7>") 'text-scale-decrease)
+(define-key global-map (kbd "C-0")
+  '(lambda ()
+     (interactive)
+     (progn (text-scale-mode 0)(buffer-face-mode 0))))
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+(define-key global-map (kbd "C-+") 'text-scale-increase)
