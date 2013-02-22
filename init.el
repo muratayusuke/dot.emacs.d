@@ -76,8 +76,7 @@
 (global-set-key (kbd "C-S-j")
 				(lambda ()
 				  (interactive)
-				  (when (search-forward "\n" nil t 1)
-					(replace-match " "))))
+				  (join-line -1)))
 
 ;; text-scale
 (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
