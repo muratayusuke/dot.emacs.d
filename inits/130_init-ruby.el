@@ -87,3 +87,8 @@
   (local-set-key (kbd "TAB") 'indent-region)
   (local-set-key "\C-]" 'ruby-paren-match))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
+
+;; rubocop
+(add-to-list 'load-path "~/.emacs.d/elisp/dash.el/")
+(add-to-list 'load-path "~/.emacs.d/elisp/rubocop-emacs/")
+(require 'rubocop)
