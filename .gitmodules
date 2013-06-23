@@ -25,3 +25,9 @@
 [submodule "elisp/dash.el"]
 	path = elisp/dash.el
 	url = git@github.com:muratayusuke/dash.el.git
+[submodule "elisp/highlight-indentation"]
+	path = elisp/highlight-indentation
+	url = git@github.com:muratayusuke/Highlight-Indentation-for-Emacs.git
+[submodule "elisp/haml-mode"]
+	path = elisp/haml-mode
+	url = git@github.com:muratayusuke/haml-mode.git

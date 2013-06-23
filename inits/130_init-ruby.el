@@ -10,6 +10,9 @@
 (autoload 'ruby-mode "ruby-mode" "Mode for editing ruby source files" t)
 (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 
+(add-to-list 'load-path "~/.emacs.d/elisp/haml-mode/")
+(require 'haml-mode)
+
 (setq auto-mode-alist
       (append '(
                 ("\\.rb$" . ruby-mode)
@@ -17,6 +20,7 @@
                 ("Gemfile" . ruby-mode)
                 ("\\.rjs" . ruby-mode)
                 ("\\.rake" . ruby-mode)
+                ("\\.haml" . haml-mode)
                 ) auto-mode-alist))
 
 (setq interpreter-mode-alist
@@ -85,8 +89,13 @@
                              ac-source-gtags
                              ac-source-yasnippet)))
   (local-set-key (kbd "TAB") 'indent-region)
-  (local-set-key "\C-]" 'ruby-paren-match))
+  (local-set-key "\C-]" 'ruby-paren-match)
+  (highlight-indentation-current-column-mode))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
+
+(defun my-haml-mode-hook()
+  (highlight-indentation-current-column-mode))
+(add-hook 'haml-mode-hook 'my-haml-mode-hook)
 
 ;; rubocop
 (add-to-list 'load-path "~/.emacs.d/elisp/dash.el/")

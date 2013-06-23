@@ -94,3 +94,9 @@
 (defconst *dmacro-key* "\C-t" "繰返し指定キー")
 (global-set-key *dmacro-key* 'dmacro-exec)
 (autoload 'dmacro-exec "dmacro" nil t)
+
+;; highlight-indentation
+(add-to-list 'load-path "~/.emacs.d/elisp/highlight-indentation")
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-face "#e3e3d3")
+(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
