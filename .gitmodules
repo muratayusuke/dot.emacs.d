@@ -34,3 +34,6 @@
 [submodule "elisp/scss-mode"]
 	path = elisp/scss-mode
 	url = git@github.com:muratayusuke/scss-mode.git
+[submodule "elisp/coffee-mode"]
+	path = elisp/coffee-mode
+	url = git@github.com:muratayusuke/coffee-mode.git
