@@ -31,3 +31,6 @@
 [submodule "elisp/haml-mode"]
 	path = elisp/haml-mode
 	url = git@github.com:muratayusuke/haml-mode.git
+[submodule "elisp/scss-mode"]
+	path = elisp/scss-mode
+	url = git@github.com:muratayusuke/scss-mode.git

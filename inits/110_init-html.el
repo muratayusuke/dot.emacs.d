@@ -15,20 +15,20 @@
                        auto-mode-alist))
 
 ;; css-mode ÇÃê›íË
-(defun my-css-mode-hook ()
-  (c-set-style "gnu")
-  (c-set-offset 'statement-block-intro 2)
-  (setq c-basic-offset 2)
-  (turn-on-font-lock))
+;;(defun my-css-mode-hook ()
+;;  (c-set-style "gnu")
+;;  (c-set-offset 'statement-block-intro 2)
+;;  (setq c-basic-offset 2)
+;;  (turn-on-font-lock))
 
-(add-hook 'css-mode-hook 'my-css-mode-hook)
+;;(add-hook 'css-mode-hook 'my-css-mode-hook)
 
-(autoload 'css-mode "css-mode")
-(setq auto-mode-alist (cons
-                       '("\\.css$" . css-mode) auto-mode-alist))
+;;(autoload 'css-mode "css-mode")
+;;(setq auto-mode-alist (cons
+;;                       '("\\.css$" . css-mode) auto-mode-alist))
 
-(setq cssm-indent-level 2)
-(setq cssm-indent-function #'cssm-c-style-indenter)
+;;(setq cssm-indent-level 2)
+;;(setq cssm-indent-function #'cssm-c-style-indenter)
 
 (setq load-path
       (cons (expand-file-name "~/.emacs.d/elisp/js2/") load-path))
