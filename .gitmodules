@@ -6,7 +6,7 @@
 	url = https://github.com/muratayusuke/cucumber.el
 [submodule "elisp/js2"]
 	path = elisp/js2
-	url = git@github.com:muratayusuke/js2-mode.git
+	url = git@github.com:mooz/js2-mode.git
 [submodule "elisp/php-mode"]
 	path = elisp/php-mode
 	url = git@github.com:muratayusuke/php-mode.git
