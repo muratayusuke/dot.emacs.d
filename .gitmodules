@@ -37,3 +37,6 @@
 [submodule "elisp/coffee-mode"]
 	path = elisp/coffee-mode
 	url = git@github.com:muratayusuke/coffee-mode.git
+[submodule "elisp/yaml-mode"]
+	path = elisp/yaml-mode
+	url = git@github.com:muratayusuke/yaml-mode.git
