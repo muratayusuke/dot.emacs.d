@@ -43,3 +43,6 @@
 [submodule "elisp/multiple-cursors"]
 	path = elisp/multiple-cursors
 	url = git@github.com:muratayusuke/multiple-cursors.el.git
+[submodule "elisp/expand-region"]
+	path = elisp/expand-region
+	url = git@github.com:muratayusuke/expand-region.el.git
