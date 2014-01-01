@@ -40,3 +40,6 @@
 [submodule "elisp/yaml-mode"]
 	path = elisp/yaml-mode
 	url = git@github.com:muratayusuke/yaml-mode.git
+[submodule "elisp/multiple-cursors"]
+	path = elisp/multiple-cursors
+	url = git@github.com:muratayusuke/multiple-cursors.el.git
