@@ -46,3 +46,6 @@
 [submodule "elisp/expand-region"]
 	path = elisp/expand-region
 	url = git@github.com:muratayusuke/expand-region.el.git
+[submodule "elisp/auto-highlight-symbol"]
+	path = elisp/auto-highlight-symbol
+	url = git@github.com:muratayusuke/auto-highlight-symbol.git
