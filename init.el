@@ -5,6 +5,7 @@
 (setq debug-on-error t)
 
 ;; load-path
+(add-to-list 'load-path "~/.emacs.d/auto-install")
 (let ((default-directory (expand-file-name "~/.emacs.d/elisp")))
   (add-to-list 'load-path default-directory)
   (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
