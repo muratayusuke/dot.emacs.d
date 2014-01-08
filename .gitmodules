@@ -49,3 +49,6 @@
 [submodule "elisp/auto-highlight-symbol"]
 	path = elisp/auto-highlight-symbol
 	url = git@github.com:muratayusuke/auto-highlight-symbol.git
+[submodule "elisp/anzu"]
+	path = elisp/anzu
+	url = git@github.com:muratayusuke/emacs-anzu.git
