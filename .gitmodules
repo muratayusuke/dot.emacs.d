@@ -52,3 +52,6 @@
 [submodule "elisp/anzu"]
 	path = elisp/anzu
 	url = git@github.com:muratayusuke/emacs-anzu.git
+[submodule "elisp/zencoding"]
+	path = elisp/zencoding
+	url = git@github.com:muratayusuke/zencoding.git
