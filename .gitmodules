@@ -55,3 +55,6 @@
 [submodule "elisp/zencoding"]
 	path = elisp/zencoding
 	url = git@github.com:muratayusuke/zencoding.git
+[submodule "elisp/ruby-end"]
+	path = elisp/ruby-end
+	url = git@github.com:muratayusuke/ruby-end.el.git

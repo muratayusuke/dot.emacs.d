@@ -81,6 +81,8 @@
     )
 )
 
+(require 'ruby-end)
+
 (defun my-ruby-mode-hook()
   (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
   (gtags-mode 1)
@@ -101,3 +103,4 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/dash.el/")
 (add-to-list 'load-path "~/.emacs.d/elisp/rubocop-emacs/")
 (require 'rubocop)
+
