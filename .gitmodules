@@ -58,3 +58,6 @@
 [submodule "elisp/ruby-end"]
 	path = elisp/ruby-end
 	url = git@github.com:muratayusuke/ruby-end.el.git
+[submodule "elisp/anything-git-files-el"]
+	path = elisp/anything-git-files-el
+	url = git@github.com:muratayusuke/anything-git-files-el.git

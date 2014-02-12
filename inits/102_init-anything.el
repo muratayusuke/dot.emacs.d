@@ -67,7 +67,6 @@
 ;; add anything-gtags
 (require 'anything-gtags)
 
-(define-key global-map (kbd "C-x b") 'anything-for-files)
 (define-key global-map (kbd "C-x C-f") 'anything-find-file)
 
 ;; locate command for anything
@@ -81,3 +80,26 @@
 ;; uniquify
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+;; anything-git-files
+(require 'anything-git-files)
+(defun tarao/anything-for-files ()
+  (interactive)
+  (require 'anything-config)
+  (require 'anything-git-files)
+  (let* ((git-source (and (anything-git-files:git-p)
+                          `(anything-git-files:modified-source
+                            anything-git-files:untracked-source
+                            anything-git-files:all-source
+                            ,@(anything-git-files:submodule-sources 'all))))
+         (other-source '(anything-c-source-recentf
+                         anything-c-source-bookmarks
+                         anything-c-source-files-in-current-dir+
+                         anything-c-source-locate))
+         (sources `(anything-c-source-buffers+
+                    anything-c-source-ffap-line
+                    anything-c-source-ffap-guesser
+                    ,@git-source
+                    ,@other-source)))
+    (anything-other-buffer sources "*anything for files*")))
+(define-key global-map (kbd "C-x b") 'tarao/anything-for-files)
