@@ -54,8 +54,9 @@
   (let* ((file (buffer-file-name (current-buffer)))
      (dir (directory-file-name (file-name-directory file))))
     (when (executable-find "global")
-      (start-process "gtags-update" nil
-             "global" "-uv"))))
+	  (if (string= (shell-command-to-string "pgrep gtags") "")
+		  (start-process "gtags-update" nil
+						 "global" "-uv")))))
 
 (add-hook 'after-save-hook
       'my-update-gtags)
