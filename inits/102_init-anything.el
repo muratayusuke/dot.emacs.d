@@ -102,4 +102,4 @@
                     ,@git-source
                     ,@other-source)))
     (anything-other-buffer sources "*anything for files*")))
-(define-key global-map (kbd "C-x b") 'tarao/anything-for-files)
+(define-key global-map (kbd "C-x f") 'tarao/anything-for-files)
