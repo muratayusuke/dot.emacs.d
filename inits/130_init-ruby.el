@@ -8,6 +8,8 @@
 
 (require 'ruby-mode)
 (autoload 'ruby-mode "ruby-mode" "Mode for editing ruby source files" t)
+(autoload 'run-ruby "inf-ruby"
+  "Run an inferior Ruby process")
 (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 
 (add-to-list 'load-path "~/.emacs.d/elisp/haml-mode/")
@@ -92,6 +94,7 @@
                              ac-source-yasnippet)))
   (local-set-key (kbd "TAB") 'indent-region)
   (local-set-key "\C-]" 'ruby-paren-match)
+  (inf-ruby-keys)
   (highlight-indentation-current-column-mode))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
 
