@@ -4,3 +4,7 @@
 
 ; no change
 (setq egg-switch-to-buffer t)
+
+;; git gutter
+(require 'git-gutter-fringe)
+(global-git-gutter-mode)
