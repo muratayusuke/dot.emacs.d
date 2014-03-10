@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (init-loader-show-log init-loader-load) "init-loader"
-;;;;;;  "init-loader.el" (21277 30681 129594 884000))
+;;;;;;  "init-loader.el" (21277 32357 974538 624000))
 ;;; Generated autoloads from init-loader.el
 
 (autoload 'init-loader-load "init-loader" "\
@@ -19,8 +19,8 @@ Show init-loader log buffer.
 
 ;;;***
 
-;;;### (autoloads nil nil ("init-loader-pkg.el") (21277 30681 155545
-;;;;;;  507000))
+;;;### (autoloads nil nil ("init-loader-pkg.el") (21277 32358 592
+;;;;;;  943000))
 
 ;;;***
 

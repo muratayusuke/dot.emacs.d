@@ -44,13 +44,6 @@
 
 (ensure-packages-compiled)
 
-;; init-loader
-;; http://coderepos.org/share/browser/lang/elisp/init-loader/init-loader.el
-;; デフォルトで"~/.emacs.d/inits"以下のファイルをロードする
-(require 'init-loader)
-(setq init-loader-show-log-after-init nil)
-(init-loader-load)
-
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/auto-install")
 (let ((default-directory (expand-file-name "~/.emacs.d/elisp")))
@@ -58,3 +51,9 @@
   (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
       (normal-top-level-add-subdirs-to-load-path)))
 
+;; init-loader
+;; http://coderepos.org/share/browser/lang/elisp/init-loader/init-loader.el
+;; デフォルトで"~/.emacs.d/inits"以下のファイルをロードする
+(require 'init-loader)
+(setq init-loader-show-log-after-init nil)
+(init-loader-load)

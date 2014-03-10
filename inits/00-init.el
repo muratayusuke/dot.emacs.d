@@ -1,10 +1,6 @@
 ;; デバッグ
 (setq debug-on-error t)
 
-;; 行番号表示
-;(require 'wb-line-number)
-;(wb-line-number-toggle)
-
 ;; 選択部分をハイライト
 (transient-mark-mode t)
 
