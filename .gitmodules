@@ -22,9 +22,6 @@
 [submodule "elisp/rubocop-emacs"]
 	path = elisp/rubocop-emacs
 	url = git@github.com:muratayusuke/rubocop-emacs.git
-[submodule "elisp/dash.el"]
-	path = elisp/dash.el
-	url = git@github.com:muratayusuke/dash.el.git
 [submodule "elisp/highlight-indentation"]
 	path = elisp/highlight-indentation
 	url = git@github.com:muratayusuke/Highlight-Indentation-for-Emacs.git
