@@ -13,9 +13,6 @@
 [submodule "elisp/popwin-el"]
 	path = elisp/popwin-el
 	url = git@github.com:muratayusuke/popwin-el.git
-[submodule "elisp/golden-ratio.el"]
-	path = elisp/golden-ratio.el
-	url = git@github.com:muratayusuke/golden-ratio.el.git
 [submodule "elisp/flex-autopair"]
 	path = elisp/flex-autopair
 	url = git@github.com:muratayusuke/flex-autopair.git
@@ -55,9 +52,6 @@
 [submodule "elisp/ruby-end"]
 	path = elisp/ruby-end
 	url = git@github.com:muratayusuke/ruby-end.el.git
-[submodule "elisp/anything-git-files-el"]
-	path = elisp/anything-git-files-el
-	url = git@github.com:muratayusuke/anything-git-files-el.git
 [submodule "elisp/emacs-git-gutter-fringe"]
 	path = elisp/emacs-git-gutter-fringe
 	url = git@github.com:muratayusuke/emacs-git-gutter-fringe.git

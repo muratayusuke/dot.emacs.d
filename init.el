@@ -19,6 +19,12 @@
     ;; for package compile
     dash
     f
+
+	;; helm
+	helm
+
+	;; others
+	golden-ratio
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
