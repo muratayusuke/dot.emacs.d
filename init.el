@@ -22,6 +22,7 @@
 
 	;; helm
 	helm
+	helm-gtags
 
 	;; others
 	golden-ratio
