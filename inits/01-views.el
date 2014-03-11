@@ -95,7 +95,7 @@
 
 
 ;; ツールバーを隠す
-(tool-bar-mode nil)
+(tool-bar-mode -1)
 
 (add-to-list 'load-path "~/.emacs.d/elisp/color-theme/")
 (when (require 'color-theme nil t)
