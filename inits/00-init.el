@@ -46,9 +46,6 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 
-;; turn off toolbar
-(tool-bar-mode -1)
-
 ;; join line
 (global-set-key (kbd "C-S-j")
 				(lambda ()
