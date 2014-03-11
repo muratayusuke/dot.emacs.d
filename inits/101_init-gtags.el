@@ -1,4 +1,4 @@
-(add-to-list 'load-path "/usr/local/global/share/gtags/")
+(add-to-list 'load-path "/usr/local/share/gtags/")
 (require 'gtags)
 
 ;; fix buf of 6.2.1
