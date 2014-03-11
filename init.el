@@ -23,6 +23,7 @@
 	;; helm
 	helm
 	helm-gtags
+	helm-git-files
 
 	;; others
 	golden-ratio
