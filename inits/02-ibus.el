@@ -1,4 +1,5 @@
 ;; ibus-mode
+;; this requires ibus-el package
 (require 'ibus)
 ;; Turn on ibus-mode automatically after loading .emacs
 (add-hook 'after-init-hook 'ibus-mode-on)
