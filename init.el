@@ -25,6 +25,9 @@
 	helm-gtags
 	helm-git-files
 
+	;; edit-mode
+	emmet-mode
+
 	;; others
 	golden-ratio
 	auto-complete
