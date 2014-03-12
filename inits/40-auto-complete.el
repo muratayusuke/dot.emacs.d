@@ -1,6 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/elisp/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict")
 (ac-config-default)
 
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
@@ -45,6 +43,3 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (local-set-key (kbd "C-c m") 'ac-complete-semantic)))
-
-
-;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)

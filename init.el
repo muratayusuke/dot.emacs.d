@@ -27,6 +27,7 @@
 
 	;; others
 	golden-ratio
+	auto-complete
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
