@@ -28,6 +28,7 @@
 	;; others
 	golden-ratio
 	auto-complete
+	smartparens
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list

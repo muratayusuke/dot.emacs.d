@@ -83,8 +83,6 @@
     )
 )
 
-(require 'ruby-end)
-
 (defun my-ruby-mode-hook()
   (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
   (gtags-mode 1)

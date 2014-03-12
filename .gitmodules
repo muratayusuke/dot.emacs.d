@@ -13,9 +13,6 @@
 [submodule "elisp/popwin-el"]
 	path = elisp/popwin-el
 	url = git@github.com:muratayusuke/popwin-el.git
-[submodule "elisp/flex-autopair"]
-	path = elisp/flex-autopair
-	url = git@github.com:muratayusuke/flex-autopair.git
 [submodule "elisp/rubocop-emacs"]
 	path = elisp/rubocop-emacs
 	url = git@github.com:muratayusuke/rubocop-emacs.git
@@ -49,9 +46,6 @@
 [submodule "elisp/zencoding"]
 	path = elisp/zencoding
 	url = git@github.com:muratayusuke/zencoding.git
-[submodule "elisp/ruby-end"]
-	path = elisp/ruby-end
-	url = git@github.com:muratayusuke/ruby-end.el.git
 [submodule "elisp/emacs-git-gutter-fringe"]
 	path = elisp/emacs-git-gutter-fringe
 	url = git@github.com:muratayusuke/emacs-git-gutter-fringe.git
