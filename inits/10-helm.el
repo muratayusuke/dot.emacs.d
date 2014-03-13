@@ -21,3 +21,4 @@
 (global-set-key "\M-x" 'helm-M-x)
 (global-set-key "\C-xb" 'my-helm)
 (global-set-key "\M-y" 'helm-show-kill-ring)
+(global-set-key "\M-/" 'helm-ag-r-from-git-repo)
