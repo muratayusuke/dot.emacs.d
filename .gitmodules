@@ -4,9 +4,6 @@
 [submodule "elisp/js2"]
 	path = elisp/js2
 	url = git@github.com:muratayusuke/js2-mode.git
-[submodule "elisp/rubocop-emacs"]
-	path = elisp/rubocop-emacs
-	url = git@github.com:muratayusuke/rubocop-emacs.git
 [submodule "elisp/highlight-indentation"]
 	path = elisp/highlight-indentation
 	url = git@github.com:muratayusuke/Highlight-Indentation-for-Emacs.git

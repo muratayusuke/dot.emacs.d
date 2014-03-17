@@ -66,7 +66,5 @@
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
 
 ;; rubocop
-(add-to-list 'load-path "~/.emacs.d/elisp/dash.el/")
-(add-to-list 'load-path "~/.emacs.d/elisp/rubocop-emacs/")
 (require 'rubocop)
 

@@ -33,6 +33,7 @@
 	scss-mode
 	coffee-mode
 	feature-mode
+	rubocop
 
 	;; region related
 	multiple-cursors
