@@ -30,13 +30,16 @@
 	emmet-mode
 	php-mode
 
+	;; region related
+	multiple-cursors
+	expand-region
+	anzu
+
 	;; others
 	golden-ratio
 	auto-complete
 	smartparens
 	undohist
-	multiple-cursors
-	expand-region
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
