@@ -36,6 +36,7 @@
 	smartparens
 	undohist
 	multiple-cursors
+	expand-region
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
