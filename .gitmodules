@@ -10,12 +10,3 @@
 [submodule "elisp/auto-highlight-symbol"]
 	path = elisp/auto-highlight-symbol
 	url = git@github.com:muratayusuke/auto-highlight-symbol.git
-[submodule "elisp/emacs-git-gutter-fringe"]
-	path = elisp/emacs-git-gutter-fringe
-	url = git@github.com:muratayusuke/emacs-git-gutter-fringe.git
-[submodule "elisp/emacs-git-gutter"]
-	path = elisp/emacs-git-gutter
-	url = git@github.com:muratayusuke/emacs-git-gutter.git
-[submodule "elisp/fringe-helper"]
-	path = elisp/fringe-helper
-	url = git@github.com:muratayusuke/fringe-helper.el.git

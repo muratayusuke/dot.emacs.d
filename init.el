@@ -41,6 +41,10 @@
 	expand-region
 	anzu
 
+	;; git
+	magit
+	git-gutter-fringe
+
 	;; others
 	golden-ratio
 	auto-complete
