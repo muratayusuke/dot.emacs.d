@@ -1,9 +1,6 @@
 [submodule "elisp/egg"]
 	path = elisp/egg
 	url = git@github.com:muratayusuke/egg.git
-[submodule "elisp/cucumber.el"]
-	path = elisp/cucumber.el
-	url = git@github.com:muratayusuke/cucumber.el.git
 [submodule "elisp/js2"]
 	path = elisp/js2
 	url = git@github.com:muratayusuke/js2-mode.git
