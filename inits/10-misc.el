@@ -40,11 +40,6 @@
 ;; uniquify
 (require 'uniquify)
 
-;; popwin.el
-(add-to-list 'load-path "~/.emacs.d/elisp/popwin-el")
-(require 'popwin)
-(setq display-buffer-function 'popwin:display-buffer)
-
 ;; join line
 (global-set-key (kbd "C-S-j")
 				(lambda ()
