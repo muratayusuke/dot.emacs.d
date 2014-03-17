@@ -34,6 +34,7 @@
 	coffee-mode
 	feature-mode
 	rubocop
+	js2-mode
 
 	;; region related
 	multiple-cursors
