@@ -1,12 +1,6 @@
-[submodule "elisp/egg"]
-	path = elisp/egg
-	url = git@github.com:muratayusuke/egg.git
 [submodule "elisp/highlight-indentation"]
 	path = elisp/highlight-indentation
 	url = git@github.com:muratayusuke/Highlight-Indentation-for-Emacs.git
-[submodule "elisp/yaml-mode"]
-	path = elisp/yaml-mode
-	url = git@github.com:muratayusuke/yaml-mode.git
 [submodule "elisp/auto-highlight-symbol"]
 	path = elisp/auto-highlight-symbol
 	url = git@github.com:muratayusuke/auto-highlight-symbol.git

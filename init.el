@@ -35,6 +35,7 @@
 	feature-mode
 	rubocop
 	js2-mode
+	yaml-mode
 
 	;; region related
 	multiple-cursors
