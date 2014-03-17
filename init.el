@@ -29,6 +29,7 @@
 	;; edit-mode
 	emmet-mode
 	php-mode
+	markdown-mode
 
 	;; region related
 	multiple-cursors
