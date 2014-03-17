@@ -31,6 +31,7 @@
 	php-mode
 	markdown-mode
 	scss-mode
+	coffee-mode
 
 	;; region related
 	multiple-cursors
