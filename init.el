@@ -30,6 +30,7 @@
 	emmet-mode
 	php-mode
 	markdown-mode
+	scss-mode
 
 	;; region related
 	multiple-cursors
