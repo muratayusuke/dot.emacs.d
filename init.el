@@ -28,6 +28,7 @@
 
 	;; edit-mode
 	emmet-mode
+	php-mode
 
 	;; others
 	golden-ratio
