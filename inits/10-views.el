@@ -85,16 +85,5 @@
 ;; ツールバーを隠す
 (tool-bar-mode -1)
 
-(add-to-list 'load-path "~/.emacs.d/elisp/color-theme/")
-(when (require 'color-theme nil t)
-  (color-theme-initialize)
-
-  ;; load additional color-theme
-  (setq old-init-loader-default-regexp init-loader-default-regexp)
-  (setq init-loader-default-regexp "\\(?:^color-theme-\\)")
-  (init-loader-load "~/.emacs.d/elisp/color-theme-optional/")
-  (setq init-loader-default-regexp old-init-loader-default-regexp)
-  (color-theme-byplayer))
-
 ;; show EOF
 (setq-default indicate-empty-lines t)

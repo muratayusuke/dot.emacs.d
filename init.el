@@ -44,6 +44,7 @@
 	smartparens
 	undohist
 	highlight-indentation
+	color-theme
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
