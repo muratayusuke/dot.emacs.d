@@ -5,7 +5,6 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
 (add-to-list 'ac-modes 'yaml-mode)
-(add-to-list 'ac-modes 'rhtml-mode)
 (add-to-list 'ac-modes 'outline-mode)
 (add-to-list 'ac-modes 'feature-mode)
 (add-to-list 'ac-modes 'octave-mode)
