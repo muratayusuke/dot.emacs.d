@@ -51,8 +51,6 @@
 )
 
 (defun my-ruby-mode-hook()
-  (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
-  (gtags-mode 1)
   (setq ac-sources (append ac-sources
                            '(ac-source-words-in-same-mode-buffers
                              ac-source-gtags
