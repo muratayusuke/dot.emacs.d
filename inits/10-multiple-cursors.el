@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/elisp/multiple-cursors/")
 (require 'multiple-cursors)
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
