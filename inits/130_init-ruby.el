@@ -12,9 +12,6 @@
   "Run an inferior Ruby process")
 (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 
-(add-to-list 'load-path "~/.emacs.d/elisp/haml-mode/")
-(require 'haml-mode)
-
 (setq auto-mode-alist
       (append '(
                 ("\\.rb$" . ruby-mode)
@@ -22,7 +19,6 @@
                 ("Gemfile" . ruby-mode)
                 ("\\.rjs" . ruby-mode)
                 ("\\.rake" . ruby-mode)
-                ("\\.haml" . haml-mode)
                 ) auto-mode-alist))
 
 (setq interpreter-mode-alist
