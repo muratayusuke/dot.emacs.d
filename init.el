@@ -32,6 +32,7 @@
 	markdown-mode
 	scss-mode
 	coffee-mode
+	feature-mode
 
 	;; region related
 	multiple-cursors

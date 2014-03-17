@@ -32,32 +32,6 @@
               interpreter-mode-alist))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; cucumber.el
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/elisp/cucumber.el/")
-
-;; ;(setq feature-default-language "fi")
-;; ;; point to cucumber languages.yml or gherkin i18n.yml to use
-;; ;; exactly the same localization your cucumber uses
-;; ;(setq feature-default-i18n-file "/path/to/gherkin/gem/i18n.yml")
-;; ;; and load feature-mode
-(setq feature-use-rvm t)
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
-; bind return to newline-and-indent
-(defun my-feature-mode-hook()
-  (define-key feature-mode-map "\C-m" 'newline-and-indent)
-;  (rinari-launch)
-  (gtags-mode 1))
-
-(add-hook 'feature-mode-hook 'my-feature-mode-hook)
-
-;; set rspec-mode like key map
-(define-key feature-mode-map  (kbd "C-c ,a") 'feature-verify-all-scenarios-in-project)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ruby-mode用フック処理追加
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun ruby-paren-match (arg)
