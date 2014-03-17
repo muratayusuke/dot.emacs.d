@@ -92,13 +92,8 @@
                              ac-source-yasnippet)))
   (local-set-key (kbd "TAB") 'indent-region)
   (local-set-key "\C-]" 'ruby-paren-match)
-  (inf-ruby-keys)
-  (highlight-indentation-current-column-mode))
+  (inf-ruby-keys))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
-
-(defun my-haml-mode-hook()
-  (highlight-indentation-current-column-mode))
-(add-hook 'haml-mode-hook 'my-haml-mode-hook)
 
 ;; rubocop
 (add-to-list 'load-path "~/.emacs.d/elisp/dash.el/")

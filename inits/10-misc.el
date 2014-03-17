@@ -58,12 +58,6 @@
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 
-;; highlight-indentation
-(add-to-list 'load-path "~/.emacs.d/elisp/highlight-indentation")
-(require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#e3e3d3")
-(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
-
 ;; isearch with selected region
 (defadvice isearch-mode (around isearch-mode-default-string (forward &optional regexp op-fun recursive-edit word-p) activate)
   (if (and transient-mark-mode mark-active (not (eq (mark) (point))))

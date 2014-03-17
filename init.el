@@ -41,6 +41,7 @@
 	auto-complete
 	smartparens
 	undohist
+	highlight-indentation
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
