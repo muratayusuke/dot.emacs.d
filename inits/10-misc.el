@@ -14,7 +14,6 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
-(require 'sudo-ext)
 
 ;; 自動で最大化
 (set-frame-parameter nil 'fullscreen 'maximized)
