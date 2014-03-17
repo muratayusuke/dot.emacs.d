@@ -33,6 +33,7 @@
 	golden-ratio
 	auto-complete
 	smartparens
+	undohist
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
