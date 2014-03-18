@@ -25,6 +25,7 @@
 	helm-gtags
 	helm-git-files
 	helm-ag-r
+	helm-descbinds
 
 	;; edit-mode
 	emmet-mode

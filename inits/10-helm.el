@@ -3,6 +3,9 @@
 
 (require 'helm-git-files)
 
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+
 (defun my-helm ()
   "`helm' for opening files all resource."
   (interactive)
@@ -22,3 +25,4 @@
 (global-set-key "\C-xb" 'my-helm)
 (global-set-key "\M-y" 'helm-show-kill-ring)
 (global-set-key "\M-/" 'helm-ag-r-from-git-repo)
+(global-set-key "\C-hb" 'helm-descbinds)
