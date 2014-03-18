@@ -46,6 +46,8 @@
 	;; git
 	magit
 	git-gutter-fringe
+	gitconfig-mode
+	gitignore-mode
 
 	;; flycheck
 	flycheck
