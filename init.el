@@ -47,6 +47,10 @@
 	magit
 	git-gutter-fringe
 
+	;; flycheck
+	flycheck
+	flycheck-pos-tip
+
 	;; others
 	golden-ratio
 	auto-complete
