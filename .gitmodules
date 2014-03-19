@@ -1,6 +1,6 @@
 [submodule "elisp/highlight-indentation"]
 	path = elisp/highlight-indentation
 	url = git@github.com:muratayusuke/Highlight-Indentation-for-Emacs.git
-[submodule "elisp/el-get/el-get"]
-	path = elisp/el-get/el-get
-	url = git@github.com:dimitri/el-get.git
+[submodule "elisp/auto-highlight-symbol"]
+	path = elisp/auto-highlight-symbol
+	url = git@github.com:muratayusuke/auto-highlight-symbol.git
