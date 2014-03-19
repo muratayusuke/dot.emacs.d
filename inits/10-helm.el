@@ -26,3 +26,9 @@
 (global-set-key "\M-y" 'helm-show-kill-ring)
 (global-set-key "\M-/" 'helm-ag-r-from-git-repo)
 (global-set-key "\C-hb" 'helm-descbinds)
+
+;; open helm list top of new split window in current buffer
+(setq helm-display-function (lambda (buf)
+							  (split-window-vertically)
+							  (switch-to-buffer buf)
+							  ))
