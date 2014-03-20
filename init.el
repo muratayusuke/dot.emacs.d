@@ -33,10 +33,13 @@
 	markdown-mode
 	scss-mode
 	coffee-mode
-	feature-mode
-	rubocop
 	js2-mode
 	yaml-mode
+
+	;; ruby
+	feature-mode
+	rubocop
+	inf-ruby
 
 	;; region related
 	multiple-cursors
