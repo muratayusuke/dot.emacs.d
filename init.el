@@ -60,6 +60,7 @@
 	undohist
 	highlight-indentation
 	color-theme
+	yasnippet
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
