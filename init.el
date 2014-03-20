@@ -26,6 +26,7 @@
 	helm-git-files
 	helm-ag-r
 	helm-descbinds
+	helm-c-yasnippet
 
 	;; edit-mode
 	emmet-mode
