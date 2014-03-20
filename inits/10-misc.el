@@ -58,6 +58,8 @@
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 
+(define-key global-map (kbd "C-j") 'indent-new-comment-line)
+
 ;; isearch with selected region
 (defadvice isearch-mode (around isearch-mode-default-string (forward &optional regexp op-fun recursive-edit word-p) activate)
   (if (and transient-mark-mode mark-active (not (eq (mark) (point))))
