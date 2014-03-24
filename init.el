@@ -65,6 +65,7 @@
 	highlight-indentation
 	color-theme
 	yasnippet
+	recentf-ext
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
