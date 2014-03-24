@@ -61,7 +61,7 @@
 	golden-ratio
 	auto-complete
 	smartparens
-	undohist
+	undo-tree
 	highlight-indentation
 	color-theme
 	yasnippet
