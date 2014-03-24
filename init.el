@@ -60,12 +60,12 @@
 	;; others
 	golden-ratio
 	auto-complete
-	smartparens
 	undo-tree
 	highlight-indentation
 	color-theme
 	yasnippet
 	recentf-ext
+	flex-autopair
     ))
 
 (let ((not-installed (loop for x in my-installing-package-list
