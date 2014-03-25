@@ -57,6 +57,9 @@
 	flycheck
 	flycheck-pos-tip
 
+	;; resume window and buffer
+	revive
+
 	;; others
 	golden-ratio
 	auto-complete
