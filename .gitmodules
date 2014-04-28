@@ -4,3 +4,6 @@
 [submodule "elisp/auto-highlight-symbol"]
 	path = elisp/auto-highlight-symbol
 	url = git@github.com:muratayusuke/auto-highlight-symbol.git
+[submodule "snippets/yasnippet-ruby-mode"]
+	path = snippets/yasnippet-ruby-mode
+	url = git@github.com:muratayusuke/yasnippet-ruby-mode.git
