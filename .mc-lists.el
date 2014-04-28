@@ -6,9 +6,9 @@
 		c-electric-delete-forward
 		ibus-handle-event
 		kill-region
-		set-buffer-file-coding-system
 		))
 
 (setq mc/cmds-to-run-once
       '(
+		yaml-electric-backspace
 		))
