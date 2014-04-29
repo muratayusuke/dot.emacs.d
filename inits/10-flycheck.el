@@ -26,7 +26,6 @@ See URL `http://acrmp.github.io/foodcritic/'."
       (or
        ;; Chef CookBook
        ;; http://docs.opscode.com/chef/knife.html#id38
-	   (print "hoge")
        (locate-dominating-file parent-dir "recipes")
        ;; Knife Solo
        ;; http://matschaffer.github.io/knife-solo/#label-Init+command
