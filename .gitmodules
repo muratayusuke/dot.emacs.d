@@ -7,3 +7,6 @@
 [submodule "snippets/yasnippet-ruby-mode"]
 	path = snippets/ruby-mode
 	url = git@github.com:muratayusuke/yasnippet-ruby-mode.git
+[submodule "snippets/sh-mode"]
+	path = snippets/sh-mode
+	url = git@github.com:muratayusuke/yasnippet-sh-mode.git
