@@ -52,6 +52,7 @@
 	git-gutter-fringe
 	gitconfig-mode
 	gitignore-mode
+	egg
 
 	;; flycheck
 	flycheck
