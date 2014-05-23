@@ -70,3 +70,9 @@
           (goto-char (mark))
           (isearch-repeat-forward)))
     ad-do-it))
+
+(defun kill-all-buffer()
+  (interactive)
+  (yes-or-no-p "kill all buffer? ")
+  (dolist (buf (buffer-list))
+    (kill-buffer buf)))
