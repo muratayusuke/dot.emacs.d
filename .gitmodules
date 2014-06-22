@@ -10,3 +10,6 @@
 [submodule "snippets/sh-mode"]
 	path = snippets/sh-mode
 	url = git@github.com:muratayusuke/yasnippet-sh-mode.git
+[submodule "snippets/html-mode"]
+	path = snippets/html-mode
+	url = git@github.com:muratayusuke/yasnippet-html-mode.git
