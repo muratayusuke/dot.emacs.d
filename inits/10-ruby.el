@@ -63,3 +63,13 @@
 ;; rubocop
 (require 'rubocop)
 
+;; rhtml-mode
+(add-hook 'rhtml-mode-hook
+    (lambda ()
+      (rinari-launch)))
+(setq auto-mode-alist
+      (append '(
+                ("\\.rxml$" . rhtml-mode)
+                ("\\.erb$". rhtml-mode)
+                ("\\.rhtml$". rhtml-mode)
+                ) auto-mode-alist))

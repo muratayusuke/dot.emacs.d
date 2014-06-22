@@ -41,6 +41,8 @@
 	feature-mode
 	rubocop
 	inf-ruby
+	rhtml-mode
+	rinari
 
 	;; region related
 	multiple-cursors
