@@ -57,7 +57,6 @@
                              ac-source-yasnippet)))
   (local-set-key (kbd "TAB") 'indent-region)
   (local-set-key "\C-]" 'ruby-paren-match)
-  (setq ruby-insert-encoding-magic-comment nil)
   (inf-ruby-switch-setup))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hook)
 
