@@ -36,6 +36,7 @@
 	coffee-mode
 	js2-mode
 	yaml-mode
+	haml-mode
 
 	;; ruby
 	feature-mode
