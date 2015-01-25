@@ -41,7 +41,7 @@
 (cond (window-system
        (set-face-attribute 'default nil
                            :family "Takao Pゴシック"
-                           :height 80)
+                           :height 100)
        (set-fontset-font (frame-parameter nil 'font)
                          'japanese-jisx0208
                          '("Takaoゴシック" . "unicode-bmp")
