@@ -6,7 +6,7 @@
   (interactive)
   (color-theme-install
    '(color-theme-example
-     ((foreground-color . "light gray")
+     ((foreground-color . "white")
       (background-color . "black")
       (border-color . "black")
       (mouse-color . "light gray")
