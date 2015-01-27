@@ -38,10 +38,16 @@
 ;;01234567890123456789
 ;;あいうえおかきくけこ
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar font-size 80)
+
+;; for mac
+(if (eq system-type 'darwin)
+	(setq font-size 100)
+	)
 (cond (window-system
        (set-face-attribute 'default nil
                            :family "Takao Pゴシック"
-                           :height 100)
+                           :height font-size)
        (set-fontset-font (frame-parameter nil 'font)
                          'japanese-jisx0208
                          '("Takaoゴシック" . "unicode-bmp")
