@@ -38,7 +38,7 @@
 ;;01234567890123456789
 ;;あいうえおかきくけこ
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar font-size 80)
+(defvar font-size 90)
 
 ;; for mac
 (if (eq system-type 'darwin)
@@ -46,19 +46,19 @@
 	)
 (cond (window-system
        (set-face-attribute 'default nil
-                           :family "Takao Pゴシック"
+                           :family "Ricty Diminished Discord"
                            :height font-size)
        (set-fontset-font (frame-parameter nil 'font)
                          'japanese-jisx0208
-                         '("Takaoゴシック" . "unicode-bmp")
+                         '("Ricty Diminished Discord" . "unicode-bmp")
                          )
        (set-fontset-font (frame-parameter nil 'font)
                          'katakana-jisx0201
-                         '("Takaoゴシック" . "unicode-bmp")
+                         '("Ricty Diminished Discord" . "unicode-bmp")
                          )
 	   (set-fontset-font (frame-parameter nil 'font)
 						 'mule-unicode-0100-24ff
-						 '("monaco" . "iso10646-1")
+						 '("Ricty Diminished Discord" . "iso10646-1")
 						 )
        (setq face-font-rescale-alist
              '(
