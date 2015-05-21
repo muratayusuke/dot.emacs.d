@@ -5,17 +5,18 @@
 
 (require 'helm-descbinds)
 (helm-descbinds-mode)
+(setq helm-buffer-max-length 50)
 
 (defun my-helm ()
   "`helm' for opening files all resource."
   (interactive)
   (helm-other-buffer `(helm-source-buffers-list
-                       helm-source-recentf
-                       helm-c-source-files-in-current-dir
-					   helm-source-locate
                        helm-git-files:modified-source
                        helm-git-files:untracked-source
                        helm-git-files:all-source
+                       helm-source-recentf
+                       helm-c-source-files-in-current-dir
+					   helm-source-locate
                        ,@(helm-git-files:submodule-sources
                           '(modified untracked all))
                        helm-source-bookmarks)
