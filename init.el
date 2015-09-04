@@ -37,6 +37,7 @@
 	js2-mode
 	yaml-mode
 	haml-mode
+    jade-mode
 
 	;; ruby
 	feature-mode
