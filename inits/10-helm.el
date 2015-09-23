@@ -5,7 +5,7 @@
 
 (require 'helm-descbinds)
 (helm-descbinds-mode)
-(setq helm-buffer-max-length 50)
+(setq helm-buffer-max-length 20)
 
 (defun my-helm ()
   "`helm' for opening files all resource."
