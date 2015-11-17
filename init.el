@@ -38,6 +38,7 @@
 	yaml-mode
 	haml-mode
     jade-mode
+    terraform-mode
 
 	;; ruby
 	feature-mode
