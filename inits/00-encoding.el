@@ -6,3 +6,5 @@
 ;; controll order of auto detect encoding
 (prefer-coding-system 'euc-jp-unix)
 (prefer-coding-system 'utf-8-unix)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
