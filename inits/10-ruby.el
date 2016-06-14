@@ -15,6 +15,8 @@
                 ("Gemfile" . ruby-mode)
                 ("Capfile" . ruby-mode)
                 ("Vagrantfile" . ruby-mode)
+                ("Fastfile" . ruby-mode)
+                ("Deliverfile" . ruby-mode)
                 ("\\.rjs" . ruby-mode)
                 ("\\.rake" . ruby-mode)
                 ) auto-mode-alist))
