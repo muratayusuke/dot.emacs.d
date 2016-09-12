@@ -85,5 +85,6 @@
 (setq auto-save-file-name-transforms
   `((".*" ,(expand-file-name "~/.emacs.d/backup/") t)))
 
-;; show line number
+;; show line number and column number
 (global-linum-mode t)
+(setq column-number-mode t)
