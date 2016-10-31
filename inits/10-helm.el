@@ -7,6 +7,10 @@
 (helm-descbinds-mode)
 (setq helm-buffer-max-length 30)
 
+(unless helm-source-buffers-list
+  (setq helm-source-buffers-list
+        (helm-make-source "Buffers" 'helm-source-buffers)))
+
 (defun my-helm ()
   "`helm' for opening files all resource."
   (interactive)
@@ -15,7 +19,7 @@
                        helm-git-files:untracked-source
                        helm-git-files:all-source
                        helm-source-recentf
-                       helm-c-source-files-in-current-dir
+                       helm-source-files-in-current-dir
 					   helm-source-locate
                        ,@(helm-git-files:submodule-sources
                           '(modified untracked all))

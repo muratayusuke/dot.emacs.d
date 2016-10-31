@@ -1,11 +1,9 @@
 ;;; helm-ag-r-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads (helm-ag-r-from-git-repo helm-ag-r-current-file
-;;;;;;  helm-ag-r helm-ag-r-git-logs helm-ag-r-shell-history) "helm-ag-r"
-;;;;;;  "helm-ag-r.el" (21281 36730 331142 340000))
+;;;### (autoloads nil "helm-ag-r" "helm-ag-r.el" (22550 57750 0 0))
 ;;; Generated autoloads from helm-ag-r.el
 
 (autoload 'helm-ag-r-shell-history "helm-ag-r" "\
@@ -40,16 +38,9 @@ Search from git repository.
 
 ;;;***
 
-;;;### (autoloads nil nil ("helm-ag-r-pkg.el") (21281 36730 351422
-;;;;;;  12000))
-
-;;;***
-
-(provide 'helm-ag-r-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; helm-ag-r-autoloads.el ends here

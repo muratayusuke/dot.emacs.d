@@ -88,3 +88,13 @@
 ;; show line number and column number
 (global-linum-mode t)
 (setq column-number-mode t)
+
+;; set PATH
+(dolist (dir (list
+              "/usr/local/bin"
+              "/opt/local/bin"
+              "/opt/local/sbin"
+              ))
+  (when (and (file-exists-p dir) (not (member dir exec-path)))
+    (setenv "PATH" (concat dir ":" (getenv "PATH")))
+    (setq exec-path (append (list dir) exec-path))))
