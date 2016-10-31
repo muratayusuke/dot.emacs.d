@@ -28,6 +28,7 @@
 
 (global-set-key "\M-x" 'helm-M-x)
 (global-set-key "\C-xb" 'my-helm)
+(global-set-key "\C-x\C-f" 'helm-find-files)
 (global-set-key "\M-y" 'helm-show-kill-ring)
 (global-set-key "\M-/" 'helm-ag-r-from-git-repo)
 (global-set-key "\C-hb" 'helm-descbinds)
