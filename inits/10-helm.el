@@ -5,7 +5,7 @@
 
 (require 'helm-descbinds)
 (helm-descbinds-mode)
-(setq helm-buffer-max-length 30)
+(setq helm-buffer-max-length 45)
 
 (unless helm-source-buffers-list
   (setq helm-source-buffers-list
